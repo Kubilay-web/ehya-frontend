@@ -7,18 +7,14 @@ const SearchResults = () => {
   const location = useLocation();
   const initialResults = location.state?.searchResults || [];
 
-  // Arama sonuçlarını bir state olarak yönet
   const [searchResults, setSearchResults] = useState(initialResults);
 
   useEffect(() => {
-    // Eğer state'de arama sonuçları yoksa, boş bir dizi ile güncellemeyi yap
     if (!location.state) {
       setSearchResults([]);
     }
 
-    // Temizlik işlemi
     return () => {
-      // Bileşen unmounted olduğunda state'i temizle
       setSearchResults([]);
     };
   }, [location]);
