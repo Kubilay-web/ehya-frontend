@@ -16,7 +16,7 @@ import Categories from "./pages/admin/screens/categories/Categories";
 import EditCategories from "./pages/admin/screens/categories/EditCategories";
 import Users from "./pages/admin/screens/users/Users";
 import BlogPage from "./pages/blog/BlogPage";
-import SearchResult from "./pages/search/SearchResult";
+import SearchResults from "./pages/search/SearchResults";
 function App() {
   return (
     <div className="App font-opensans">
@@ -27,7 +27,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/search" element={<SearchResult />} />
+        <Route path="/search" element={<SearchResults />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Admin />} />
           <Route path="comments" element={<Comments />} />
