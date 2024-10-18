@@ -102,7 +102,7 @@ const CTA = () => {
               </button>
             </div>
             {isMessageVisible && (
-              <p className="mt-6 text-sm leading-7 text-dark-light md:text-center md:text-base lg:text-left">
+              <p className="mt-6 text-sm leading-7 text-white md:text-center md:text-base lg:text-left">
                 {message}
               </p>
             )}
