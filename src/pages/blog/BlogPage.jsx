@@ -18,7 +18,7 @@ let isFirstRun = true;
 const promiseOptions = async (search, loadedOptions, { page }) => {
   const { data: categoriesData, headers } = await getAllCategories(
     search,
-    page,
+    page
   );
 
   return {
@@ -62,7 +62,6 @@ const BlogPage = () => {
   }, [currentPage, searchKeyword, refetch]);
 
   const handlePageChange = (page) => {
-    // change the page's query string in the URL
     setSearchParams({ page, search: searchKeyword });
   };
 
@@ -72,8 +71,8 @@ const BlogPage = () => {
 
   return (
     <MainLayout>
-      <section className="container flex flex-col px-5 py-10 mx-auto">
-        <div className="flex flex-col mb-10 space-y-3 lg:space-y-0 lg:flex-row lg:items-center lg:gap-x-4">
+      <section className="container mx-auto flex flex-col px-5 py-10">
+        <div className="mb-10 flex flex-col space-y-3 lg:flex-row lg:items-center lg:gap-x-4 lg:space-y-0">
           <Search className="w-full max-w-xl" onSearchKeyword={handleSearch} />
           <AsyncMultiSelectTagDropdown
             placeholder={"Search by categories..."}
@@ -83,7 +82,7 @@ const BlogPage = () => {
             }}
           />
         </div>
-        <div className="flex flex-wrap pb-10 md:gap-x-5 gap-y-5">
+        <div className="flex flex-wrap gap-y-5 pb-10 md:gap-x-5">
           {isLoading || isFetching ? (
             [...Array(3)].map((item, index) => (
               <ArticleCardSkeleton
